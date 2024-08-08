@@ -1,4 +1,5 @@
 <app-header />
 <app-navigation />
 <app-dealership-info [description]="description" [founded]="founded" />
-<app-car-list />
+<app-car-list [cars]="cars" />
+<app-create-car (carCreated)="addCar($event)" />

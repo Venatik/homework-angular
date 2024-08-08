@@ -1,0 +1,13 @@
+<div class="car-list">
+    <div *ngFor="let car of cars" class="car-card">
+        <img [src]="car.images[0]" alt="{{ car.brand }} {{ car.model }}">
+        <h2>{{ car.brand }} {{ car.model }}</h2>
+        <p>{{ car.description }}</p>
+        <p>Price: ${{ car.price.toLocaleString() }}</p>
+        <p>Year: {{ car.year }}</p>
+        <p>Type: {{ car.type }}</p>
+        <p>Fuel: {{ car.fuelType }}</p>
+        <p>Mileage: {{ car.distance.toLocaleString() }} km</p>
+        <p>Location: {{ car.location.city }}, {{ car.location.country }}</p>
+    </div>
+</div>

@@ -1,0 +1,7 @@
+<div class="car-list">
+    <div *ngFor="let car of cars" class="car-card">
+        <h2>{{ car.brand }} {{ car.model }}</h2>
+        <p>{{ car.description }}</p>
+        <p>Price: ${{ car.price.toLocaleString() }}</p>
+    </div>
+</div>
