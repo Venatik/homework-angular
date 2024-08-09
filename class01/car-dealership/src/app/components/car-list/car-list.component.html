@@ -1,6 +1,6 @@
 <div class="car-list">
     <div *ngFor="let car of cars" class="car-card">
-        <img [src]="car.images[0]" alt="{{ car.brand }} {{ car.model }}">
+        <img [src]="car.images[0]" alt="car-picture">
         <h2>{{ car.brand }} {{ car.model }}</h2>
         <p>{{ car.description }}</p>
         <p>Price: ${{ car.price.toLocaleString() }}</p>
