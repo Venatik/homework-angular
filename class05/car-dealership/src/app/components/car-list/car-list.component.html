@@ -8,7 +8,7 @@
         <h2>{{car.brand}} {{car.model}}</h2>
         <p>{{car.description}}</p>
         <p>Price: {{car.price.toLocaleString()}}</p>
-        <button (click)="removeCar(car.id)">Remove Car</button>
+        <button (click)="carsService.removeCar(car.id)">Remove Car</button>
     </div>
     }
 </div>

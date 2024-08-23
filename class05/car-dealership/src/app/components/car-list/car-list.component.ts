@@ -15,15 +15,11 @@ import { CAR_DATA } from "../../data/cars.data";
 export class CarListComponent {
   cars: Car[] = [];
 
-  constructor(private carsService: CarsService) {}
+  constructor(public carsService: CarsService) {}
 
   ngOnInit() {
     this.carsService.getCars().subscribe(cars => {
       this.cars = cars;
     });
-  }
-
-  removeCar(id: string) {
-    this.carsService.removeCar(id);
   }
 }
