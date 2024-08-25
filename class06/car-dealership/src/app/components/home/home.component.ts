@@ -11,5 +11,5 @@ import { CarListComponent } from "../car-list/car-list.component";
 })
 export class HomeComponent {
   description = "Venatik's Premium Car Dealership";
-  founded = 2023;
+  founded = 2024;
 }
