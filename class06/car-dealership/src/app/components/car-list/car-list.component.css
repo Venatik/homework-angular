@@ -28,8 +28,10 @@
   transform: scale(1.2);
 }
 
-.brandFilter {
-  display: block;
+.filter-controls {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   margin: 20px auto;
   width: 80%;
   max-width: 300px;
@@ -37,4 +39,25 @@
   font-size: 16px;
   border: 1px solid #ccc;
   border-radius: 4px;
+}
+
+.filter-controls input {
+  width: 100%;
+  margin: 5px 0;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.price-range-container {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }

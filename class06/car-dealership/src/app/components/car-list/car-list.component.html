@@ -1,9 +1,13 @@
-<input type="text" placeholder="Filter cars by brand" class="brandFilter" (input)="onInputChange($event)">
+<div class="filter-controls">
+    <input type="text" placeholder="Filter cars by brand" class="brandFilter" (input)="onInputChange($event, 'brand')">
+    <input type="number" placeholder="From Price" (input)="onInputChange($event, 'fromPrice')">
+    <input type="number" placeholder="To Price" (input)="onInputChange($event, 'toPrice')">
+</div>
 
 <div class="car-list">
 
 
-    @for (car of cars() | filterBrand: searchValue(); track car.id) {
+    @for (car of cars() | filterCars: searchValue(): fromPrice(): toPrice(); track car.id) {
     <div class="car-card">
 
         @if (car.imageUrl) {
