@@ -14,10 +14,20 @@ nav ul {
 
 nav ul li {
   margin: 0 15px;
+  transition: all 0.3s ease-in-out;
 }
 
 nav ul li a {
   text-decoration: none;
   color: #333;
   font-weight: bold;
+  transition: color 0.5s ease-in-out;
+}
+
+nav ul li:hover {
+  scale: 1.2;
+}
+
+nav ul li:hover a {
+  color: #ccc;
 }
