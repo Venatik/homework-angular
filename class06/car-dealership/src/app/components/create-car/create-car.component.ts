@@ -23,14 +23,6 @@ export class CreateCarComponent {
 
   constructor(private carsService: CarsService) {}
 
-  // clearInputs() {
-  //   this.brand = "";
-  //   this.model = "";
-  //   this.description = "";
-  //   this.price = 0;
-  //   this.imageUrl = "";
-  // }
-
   handleSubmit() {
     if (this.carForm.form.valid) {
       this.carsService.addCar({
