@@ -22,4 +22,8 @@ export class CarListComponent {
       this.cars = cars;
     });
   }
+
+  removeCar(id: string) {
+    this.carsService.removeCar(id);
+  }
 }

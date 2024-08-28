@@ -44,4 +44,8 @@ export class CarListComponent {
         break;
     }
   }
+
+  removeCar(id: string) {
+    this.carsService.removeCar(id);
+  }
 }

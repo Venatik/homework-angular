@@ -16,7 +16,7 @@
         <h2>{{car.brand}} {{car.model}}</h2>
         <p>{{car.description}}</p>
         <p>Price: {{car.price | currency: 'EUR' : 'symbol': '1.2-2'}}</p>
-        <button (click)="carsService.removeCar(car.id)">Remove Car</button>
+        <button (click)="removeCar(car.id)">Remove Car</button>
     </div>
     }
 </div>
