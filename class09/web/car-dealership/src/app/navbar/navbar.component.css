@@ -8,6 +8,7 @@ ul {
 
 li {
   cursor: pointer;
+  font-weight: 800;
 }
 
 li:hover {
