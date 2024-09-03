@@ -1,0 +1,33 @@
+<mat-card class="card">
+    <mat-card-header>
+        <mat-card-title>{{car().brand}}</mat-card-title>
+        <mat-card-subtitle>
+            {{car().fuelType}}, {{car().price | currency}}
+        </mat-card-subtitle>
+    </mat-card-header>
+    <div class="card-image">
+        <img mat-card-image [src]="getImageUrl()" alt="Car Image" height="auto" width="100%">
+    </div>
+    <mat-card-content>
+        <p>{{car().description}}</p>
+
+        <mat-accordion>
+            <mat-expansion-panel (opened)="openPanel(true)" (closed)="openPanel(false)">
+
+                <mat-expansion-panel-header>
+                    <mat-panel-title>{{panelOpenState() ? 'Hide' : 'Show More'}}</mat-panel-title>
+
+                </mat-expansion-panel-header>
+                <div class="icon-container">
+                    <mat-icon aria-hidden="false" [matBadge]="car().doors">door_front</mat-icon>
+                    <mat-icon aria-hidden="false" [matBadge]="car().enginePower">directions_car</mat-icon>
+
+                    @if (car().isNew) {
+                    <mat-icon aria-hidden="false" matTooltip="The car is brand new!">grade</mat-icon>
+                    }
+
+                </div>
+            </mat-expansion-panel>
+        </mat-accordion>
+    </mat-card-content>
+</mat-card>
