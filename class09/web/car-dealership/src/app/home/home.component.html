@@ -1,6 +1,6 @@
 <div>
-    <app-cars [cars]="(cars | async) || []" />
+    <mat-paginator [length]="total()" [pageSize]="pageSize()" [pageSizeOptions]="[5, 10, 25, 100]" [pageIndex]="page()"
+        aria-label="Select page" (page)="onPageChange($event)" />
 
-    <mat-paginator [length]="total()" [pageSize]="pageSize()" [pageSizeOptions]="[5, 10, 25, 100]"
-        aria-label="Select page" (page)="pageSize.set($event.pageSize); page.set($event.pageIndex)" />
+    <app-cars [cars]="(cars | async) || []" />
 </div>

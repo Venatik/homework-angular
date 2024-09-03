@@ -19,6 +19,7 @@ mat-card-content > p {
   font-size: 14px;
   padding: 5px 0;
   color: #015cbb;
+  height: 50px;
 }
 
 .card-image {

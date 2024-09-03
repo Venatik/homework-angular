@@ -1,7 +1,7 @@
 import { Component, signal } from "@angular/core";
 import { CarsComponent } from "../cars/cars.component";
 import { AsyncPipe } from "@angular/common";
-import { MatPaginatorModule } from "@angular/material/paginator";
+import { MatPaginatorModule, PageEvent } from "@angular/material/paginator";
 import { finalize, map, Observable, tap } from "rxjs";
 import { CarService } from "../../services/car.service";
 import { Car } from "../../types/car.interface";
@@ -18,8 +18,8 @@ export class HomeComponent {
 
   isLoading = signal<boolean>(true);
 
-  total = signal(0);
-  pageSize = signal(0);
+  total = signal(30);
+  pageSize = signal(10);
   page = signal(0);
 
   constructor(private readonly carService: CarService) {}
@@ -29,10 +29,17 @@ export class HomeComponent {
   }
 
   getCars() {
-    this.cars = this.carService.getCars().pipe(
+    this.isLoading.set(true);
+    this.cars = this.carService.getCars(this.page(), this.pageSize()).pipe(
       tap(response => this.total.set(response.total)),
       map(response => response.payload),
       finalize(() => this.isLoading.set(false))
     );
+  }
+
+  onPageChange(event: PageEvent) {
+    this.pageSize.set(event.pageSize);
+    this.page.set(event.pageIndex);
+    this.getCars();
   }
 }
