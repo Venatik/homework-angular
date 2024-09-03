@@ -13,15 +13,6 @@ export class CarService {
 
   constructor(private readonly http: HttpClient) {}
 
-  // getCars(): Observable<Response<Car[]>> {
-  //   return this.http.get<Response<Car[]>>(this.carPath).pipe(
-  //     catchError(error => {
-  //       console.log("An error occurred:", error);
-  //       return of({ payload: [], total: 0 });
-  //     })
-  //   );
-  // }
-
   getCars(
     page: number,
     pageSize: number
