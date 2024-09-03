@@ -31,13 +31,9 @@ export class CarComponent {
   car = input.required<Car>();
 
   getImageUrl(): string {
-    const imagePath = this.car().images[0];
-
-    const cleanImagePath = imagePath
-      .replace(/^\.\//, "")
-      .replace(/^(car-images|car_images)\//, "");
-
-    return `${environment.apiUrl}/car_images/${cleanImagePath}`;
+    const imageName = this.car().images[0].split("/").pop();
+    // console.log(imageName);
+    return `${environment.apiUrl}/car_images/${imageName}`;
   }
 
   readonly panelOpenState = signal(false);
