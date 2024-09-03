@@ -45,3 +45,12 @@ mat-card-content > p {
 .icon-container mat-icon {
   margin: 0 10px;
 }
+
+button[mat-flat-button] {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
+  width: 50%;
+  left: 25%;
+}
